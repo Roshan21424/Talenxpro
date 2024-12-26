@@ -1,4 +1,4 @@
-package com.talentxpro.website.JwtUtils;
+package com.talentxpro.website.Configurations.JwtUtilities;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
@@ -36,7 +36,6 @@ public class JwtUtils {
     public String getJwtFromHeader(HttpServletRequest request){
 
         String bearerToken = request.getHeader("Authorization");
-
         if(bearerToken != null && bearerToken.startsWith("Bearer ")){
             System.out.println(bearerToken.substring(7));
             return bearerToken.substring(7);

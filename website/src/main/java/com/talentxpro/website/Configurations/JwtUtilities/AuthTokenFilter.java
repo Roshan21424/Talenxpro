@@ -1,8 +1,7 @@
-package com.talentxpro.website.JwtUtils;
+package com.talentxpro.website.Configurations.JwtUtilities;
 
 
-
-import com.talentxpro.website.Services.SecurityServices.UserDetailsServiceImpl;
+import com.talentxpro.website.Services.Security.UserDetailsServiceImplementation;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -26,10 +25,11 @@ public class AuthTokenFilter extends OncePerRequestFilter {
     @Autowired
     private JwtUtils jwtUtils;
     @Autowired
-    private UserDetailsServiceImpl userDetailsService;
+    private UserDetailsServiceImplementation userDetailsService;
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         try {
+            System.out.println(request.getHeader("Authorization"));
             String jwt = parseJwt(request);
             // Extract JWT from the header
 

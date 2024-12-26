@@ -3,7 +3,7 @@ package com.talentxpro.website.Controllers;
 import com.talentxpro.website.Entities.Application;
 import com.talentxpro.website.Entities.Domains.Domain;
 import com.talentxpro.website.Entities.Domains.SubDomain;
-import com.talentxpro.website.Entities.User;
+import com.talentxpro.website.Entities.Users.User;
 import com.talentxpro.website.Repositories.ApplicationRepository;
 import com.talentxpro.website.Repositories.DomainRepository;
 import com.talentxpro.website.Repositories.SubDomainRepository;
@@ -11,7 +11,6 @@ import com.talentxpro.website.Repositories.UserRepository;
 import jakarta.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.security.oauth2.core.user.OAuth2User;
@@ -20,8 +19,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
-import java.util.Optional;
-
 
 @Controller
 public class MainController{

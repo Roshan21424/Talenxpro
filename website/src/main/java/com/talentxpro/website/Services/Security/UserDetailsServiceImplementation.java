@@ -1,9 +1,10 @@
-package com.talentxpro.website.Services.SecurityServices;
+package com.talentxpro.website.Services.Security;
 
 
 
-import com.talentxpro.website.Entities.User;
+import com.talentxpro.website.Entities.Users.User;
 import com.talentxpro.website.Repositories.UserRepository;
+import com.talentxpro.website.models.Security.UserDetailsImplementation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -13,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 @Service
-public class UserDetailsServiceImpl implements UserDetailsService {
+public class UserDetailsServiceImplementation implements UserDetailsService {
     @Autowired
     UserRepository userRepository;
 
@@ -22,7 +23,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByUserName(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + username));
-        return UserDetailsImpl.build(user);
+        return UserDetailsImplementation.build(user);
     }
 
 }

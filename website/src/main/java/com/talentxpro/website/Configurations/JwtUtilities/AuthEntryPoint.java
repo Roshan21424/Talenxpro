@@ -1,4 +1,4 @@
-package com.talentxpro.website.JwtUtils;
+package com.talentxpro.website.Configurations.JwtUtilities;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;

@@ -1,4 +1,4 @@
-package com.talentxpro.website.models;
+package com.talentxpro.website.models.RoleDTO;
 
 public enum AppRole {
     ROLE_USER,

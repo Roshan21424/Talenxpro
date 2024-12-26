@@ -1,7 +1,8 @@
-package com.talentxpro.website.Services.SecurityServices;
+package com.talentxpro.website.models.Security;
 
 
-import com.talentxpro.website.Entities.User;
+
+import com.talentxpro.website.Entities.Users.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,7 +11,7 @@ import java.util.List;
 import java.util.Objects;
 
 //implementation of the UserDetails Interface for Security
-public class UserDetailsImpl implements UserDetails {
+public class UserDetailsImplementation implements UserDetails {
     private static final long serialVersionUID = 1L;
     private Long id;
     private String username;
@@ -20,7 +21,7 @@ public class UserDetailsImpl implements UserDetails {
     private boolean is2faEnabled;
     private Collection<? extends GrantedAuthority> authorities;
 
-    public UserDetailsImpl(Long id, String username, String email, String password, boolean is2faEnabled, Collection<? extends GrantedAuthority> authorities) {
+    public UserDetailsImplementation(Long id, String username, String email, String password, boolean is2faEnabled, Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
         this.username = username;
         this.email = email;
@@ -83,18 +84,18 @@ public class UserDetailsImpl implements UserDetails {
             return true;
         if (o == null || getClass() != o.getClass())
             return false;
-        UserDetailsImpl user = (UserDetailsImpl) o;
+        UserDetailsImplementation user = (UserDetailsImplementation) o;
         return Objects.equals(id, user.id);
     }
 
-    public static UserDetailsImpl build(User user) {
-        GrantedAuthority authority = new SimpleGrantedAuthority(user.getUserRole().getRoleName().name());
-        return new UserDetailsImpl(
+    public static UserDetailsImplementation build(User user) {
+        GrantedAuthority authority = new SimpleGrantedAuthority(user.getRole().getRoleName().name());
+        return new UserDetailsImplementation(
                 (long) user.getUserId(),
                 user.getUserName(),
-                user.getUserEmailId(),
-                user.getUserPassword(),
-                user.isUserTwoFactorEnabled(),
+                user.getEmail(),
+                user.getPassword(),
+                user.isTwoFactorEnabled(),
                 List.of(authority) // Wrapping the single authority in a list
         );
     }

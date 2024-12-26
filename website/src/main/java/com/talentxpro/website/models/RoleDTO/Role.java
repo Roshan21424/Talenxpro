@@ -1,11 +1,6 @@
-package com.talentxpro.website.models;
+package com.talentxpro.website.models.RoleDTO;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.talentxpro.website.Entities.User;
 import jakarta.persistence.*;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name="role")
