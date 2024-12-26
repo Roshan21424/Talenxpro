@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My clone</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/AProject.css">
+</head>
+
+<body>
+<!-- Navbar Section -->
+<div id="sec12">
+    <nav class="navbar" data-header>
+        <div class="logo">TalenXpo</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#dms">Explore Domains</a></li>
+            <li><a href="#optionchange">Current Interns</a></li>
+            <li><a href="#opsops">Our vision</a></li>
+            <li><a href="#Officials01">Officials</a></li>
+        </ul>
+        <div class="actions">
+            <button class="login-btn"><span>APPLY NOW</span></button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="lefty">
+            <h1>The future belongs to those <span>who believe in the beauty of their dreams.</span></h1>
+            <p>Internships can help you turn those dreams into
+                reality</p>
+            <ul>
+                <li>Seizing opportunities</li>
+                <li>Networking</li>
+                <li>Resilience</li>
+            </ul>
+        </div>
+
+        <div class="righty">
+            <h3>Select Your Intrested Domain</h3>
+            <div class="search-bar">
+                <input type="text" placeholder="Students Completed Internship">
+                <button class="search-btn">
+                    <i>▶</i>
+                    <h5><b>Search</b></h5>
+                </button>
+            </div>
+            <p>Frequent Searches</p>
+            <ul class="suggestions">
+                <li>Web Development</li>
+                <li>Artificial Intelligence</li>
+                <li>Full Stack</li>
+                <li>Cybersecurity</li>
+                <li>Java Developer</li>
+            </ul>
+        </div>
+    </section>
+</div>
+
+<!-- domains -->
+<div id="dms">
+    <div class="domain-container">
+        <div class="domain-header">
+            <h1>Explore Internship Domains</h1>
+            <br><br>
+        </div>
+
+        <!-- AI Domain Card -->
+        <div id="dmsai">
+            <div class="domain-card-new" onclick="toggleSubdomainsNew('domainAI-new')">
+                <img src="https://imageio.forbes.com/specials-images/imageserve/645b3eca0059191fb09c02fa/15-Amazing-Real-World-Applications-Of-AI-Everyone-Should-Know-About/960x0.jpg?height=400&width=711&fit=bounds"
+                     alt="AI Domain">
+                <div class="domain-content-new">
+                    <h3>AI (Artificial Intelligence)</h3>
+                    <p>Explore the fascinating world of AI, including machine learning, deep learning, and neural
+                        networks.
+                        Dive into cutting-edge technologies that are shaping the future.</p>
+                    <div class="subdomain-list-new" id="domainAI-new-subdomains">
+                        <ul>
+                            <center>
+                                <li onclick="goToApplicationPageNew('AI', 'Machine Learning')">Machine Learning</li>
+                                <li onclick="goToApplicationPageNew('AI', 'Deep Learning')">Deep Learning</li>
+                                <li onclick="goToApplicationPageNew('AI', 'Natural Language Processing')">Natural
+                                    Language
+                                    Processing</li>
+                            </center>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Web Development Domain Card -->
+        <div id="dmsweb">
+            <div class="domain-card-new" onclick="toggleSubdomainsNew('domainWebDev-new')">
+                <img src="https://itspectrumsolutions.com/wp-content/uploads/2024/04/1_pE2fOVDikEUwiQJlh4ggzg.jpeg"
+                     alt="Web Development Domain">
+                <div class="domain-content-new">
+                    <h3>Web Development</h3>
+                    <p>Learn the art of building stunning websites and robust web applications. From frontend to
+                        backend,
+                        master the skills required to become a full-stack developer.</p>
+                    <div class="subdomain-list-new" id="domainWebDev-new-subdomains">
+                        <ul>
+                            <center>
+                                <li onclick="goToApplicationPageNew('Web Development', 'Frontend')">Mern Stack</li>
+                                <li onclick="goToApplicationPageNew('Web Development', 'Backend')">Django</li>
+                                <li onclick="goToApplicationPageNew('Web Development', 'Full Stack')">Full Stack
+                                </li>
+                            </center>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Cybersecurity Domain Card -->
+        <div id="dmscs">
+            <div class="domain-card-new" onclick="toggleSubdomainsNew('domainCybersecurity-new')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCHn68-VsE7VrVPrsb3x0IoqFFNVUTxzVLgQ&s"
+                     alt="Cybersecurity Domain">
+                <div class="domain-content-new">
+                    <h3>Cybersecurity</h3>
+                    <p>Delve into the field of cybersecurity, focusing on protecting networks, ethical hacking, and
+                        safeguarding sensitive information in the digital world.</p>
+                    <div class="subdomain-list-new" id="domainCybersecurity-new-subdomains">
+                        <ul>
+                            <center>
+                                <li onclick="goToApplicationPageNew('Cybersecurity', 'Network Security')">Network
+                                    Security
+                                </li>
+                                <li onclick="goToApplicationPageNew('Cybersecurity', 'Penetration Testing')">
+                                    Penetration
+                                    Testing
+                                </li>
+                                <li onclick="goToApplicationPageNew('Cybersecurity', 'Forensics')">Forensics</li>
+                            </center>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- changeingCard -->
+<div id="optionchange">
+    <h1 class="off_heading-0">INFORMATION OF STUDENTS</h1>
+    <div class="optional-main-page">
+        <div class="optional-container">
+            <!-- Sidebar Options -->
+            <div class="optional-sidebar">
+                <a id="optional-item1" class="optional-active" href="#">Repositories</a>
+                <a id="optional-item2" href="#">Projects</a>
+                <a id="optional-item3" href="#">Tech Stack</a>
+                <a id="optional-item4" href="#">Assessment Score</a>
+                <a id="optional-item5" href="#">Experience</a>
+            </div>
+
+            <!-- Right Content Area -->
+            <div class="optional-content">
+                <!-- Card Content with Two Divs -->
+                <div class="optional-card optional-active" id="optional-item1-card">
+                    <div class="optional-card-body">
+                        <div class="optional-left">
+                            <h4>Repositories</h4><br>
+                            <p>Content for the left side of the card. Lorem ipsum dolor sit amet consectetur
+                                adipisicing
+                                elit. Qui, numquam. Quisquam dolore alias architecto consectetur delectus. Quo eum
+                                inventore
+                                sequi.</p>
+                        </div>
+                        <div class="optional-right">
+                            <h4>Details</h4><br>
+                            <p>Content for the right side of the card. Lorem ipsum dolor sit amet consectetur
+                                adipisicing
+                                elit. Unde soluta impedit debitis doloremque minima magni asperiores molestias
+                                deleniti
+                                temporibus, earum pariatur recusandae, ullam saepe omnis!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Content for Projects -->
+                <div class="optional-card" id="optional-item2-card">
+                    <div class="optional-card-body">
+                        <div class="optional-left">
+                            <h4>Projects</h4><br>
+                            <p>Information on completed projects.</p>
+                        </div>
+                        <div class="optional-right">
+                            <h4>Technologies Used</h4>
+                            <p>Details on the technologies and tools.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Content for Tech Stack -->
+                <div class="optional-card" id="optional-item3-card">
+                    <div class="optional-card-body">
+                        <div class="optional-left">
+                            <h4>Tech Stack</h4><br>
+                            <p>Programming languages and tools.</p>
+                        </div>
+                        <div class="optional-right">
+                            <h4>Skills</h4>
+                            <p>Information on skills and expertise.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Content for Assessment Score -->
+                <div class="optional-card" id="optional-item4-card">
+                    <div class="optional-card-body">
+                        <div class="optional-left">
+                            <h4>Assessment Scores</h4><br>
+                            <p>Details of your performance.</p>
+                        </div>
+                        <div class="optional-right">
+                            <h4>Statistics</h4>
+                            <p>Graphs and performance insights.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Content for Experience -->
+                <div class="optional-card" id="optional-item5-card">
+                    <div class="optional-card-body">
+                        <div class="optional-left">
+                            <h4>Experience</h4>
+                            <p>Work history and positions held.</p>
+                        </div>
+                        <div class="optional-right">
+                            <h4>Accomplishments</h4>
+                            <p>Achievements and milestones.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- steps to follow -->
+<div id="opsops">
+    <div class="container4-opps">
+        <div class="left4-opps">
+            <div class="img-opps">
+                <img src="https://www.naceweb.org/images/default-source/2024/feature/collaborating-with-faculty-for-successful-student-outcomes-institutional-effectiveness-xlarge.jpg"
+                     alt="students" height="100%" width="100%">
+            </div>
+        </div>
+
+        <div class="right4-opps">
+            <center>
+                <h1>OUR VISION OUR PATH</h1>
+            </center>
+            <ul class="steps-list-opps">
+                <li></li>
+                <li></li>
+                <li data-step="Step 1 :">Apply In Interested Domain</li>
+                <li data-step="Step 2 :">Get Shortlisted</li>
+                <li data-step="Step 3 :">Schedule Interview</li>
+                <li data-step="Step 4 :">Get Offer Letter</li>
+                <li data-step="Step 5 :">Work With Us For Upcoming 5 Months</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- ExpandingItems -->
+<div id="Officials01">
+    <h1 class="off_heading">THE OFFICIALS OF TALENXPO</h1>
+    <div id="Officials">
+        <div class="ExpCards">
+            <!-- Panel 1 -->
+            <div class="panel"
+                 style="background-image: url(https://cdn.pixabay.com/photo/2020/05/12/17/04/man-5163992_640.jpg);">
+                <div class="panel-content">
+                    <div class="left">
+                        <p>
+                            Satya Nadella has been at the helm of Microsoft since 2014, transforming the company by
+                            emphasizing cloud computing and
+                            artificial intelligence. His leadership has significantly boosted Microsoft's market
+                            value and solidified its place in
+                            the tech industry. <br><br>
+                            -Satya Nadella</p>
+                    </div>
+                    <div class="right"
+                         style="background-image: url(https://cdn.pixabay.com/photo/2020/05/12/17/04/man-5163992_640.jpg);">
+                    </div>
+                </div>
+            </div>
+            <!-- Panel 2 -->
+            <div class="panel"
+                 style="background-image: url(https://plus.unsplash.com/premium_photo-1689371952452-c88c72464115?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8d29tZW4lMjBmYXNoaW9ufGVufDB8fDB8fHww);">
+                <div class="panel-content">
+                    <div class="left">
+                        <p>Revathi Advaithi CEO of Flex Ltd., is guiding the company’s transformation into a leading
+                            technology solutions provider. Her strategic
+                            vision focuses on innovation and efficiency, driving Flex's growth in a competitive
+                            market. Advaithi's leadership is
+                            marked by a commitment to operational excellence and industry leadership.
+                            <br><br>-Revathi Advaithi
+                        </p>
+                    </div>
+                    <div class="right"
+                         style="background-image: url(https://plus.unsplash.com/premium_photo-1689371952452-c88c72464115?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8d29tZW4lMjBmYXNoaW9ufGVufDB8fDB8fHww);">
+                    </div>
+                </div>
+            </div>
+            <!-- Panel 3 -->
+            <div class="panel"
+                 style="background-image: url('https://images.unsplash.com/photo-1464746133101-a2c3f88e0dd9?q=80&w=1686&auto=format&fit=crop');">
+                <div class="panel-content">
+                    <div class="left">
+                        <p>Sundar Pichai leads Google and its parent company Alphabet, focusing on innovation and
+                            expanding the reach of Google's
+                            core products and services. Since becoming CEO, Pichai has overseen significant
+                            advancements in AI, cloud computing, and
+                            hardware. <br><br>
+                            -Sundar Pichai
+                        </p>
+                    </div>
+                    <div class="right"
+                         style="background-image: url('https://images.unsplash.com/photo-1464746133101-a2c3f88e0dd9?q=80&w=1686&auto=format&fit=crop');">
+                    </div>
+                </div>
+            </div>
+            <!-- Panel 4 -->
+            <div class="panel"
+                 style="background-image: url(https://images.unsplash.com/photo-1629196753813-8b4827ddc7c0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTcwfHx3b21lbiUyMGNvbGxlZ2V8ZW58MHx8MHx8fDA%3D);">
+                <div class="panel-content">
+                    <div class="left">
+                        <p>Shantanu Narayen, the CEO of Adobe, has transformed the company with his vision of
+                            digital experiences and creativity.
+                            Under his leadership, Adobe transitioned to a subscription-based model, expanding its
+                            suite of creative software.
+                            Narayen's focus on innovation and customer experience has driven Adobe's significant
+                            growth and industry impact. <br><br>
+                            -Shantanu Narayen</p>
+                    </div>
+                    <div class="right"
+                         style="background-image: url(https://images.unsplash.com/photo-1629196753813-8b4827ddc7c0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTcwfHx3b21lbiUyMGNvbGxlZ2V8ZW58MHx8MHx8fDA%3D);">
+                    </div>
+                </div>
+            </div>
+            <!-- Panel 5 -->
+            <div class="panel"
+                 style="background-image: url(https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG1lbiUyMGNvbGxlZ2V8ZW58MHx8MHx8fDA%3D);">
+                <div class="panel-content">
+                    <div class="left">
+                        <p>Arvind Krishna took over as CEO of IBM, steering the company towards hybrid cloud and AI
+                            to foster growth and
+                            innovation. His leadership has brought a renewed focus on technology and strategic
+                            acquisitions. Krishna’s commitment to
+                            advancing IBM's technological capabilities is reshaping the company's future.
+                            <br><br>-Arvind Krishna
+                        </p>
+                    </div>
+                    <div class="right"
+                         style="background-image: url(https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG1lbiUyMGNvbGxlZ2V8ZW58MHx8MHx8fDA%3D);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <h1>About Us | Contact Us</h1>
+    <h1>&copy; 2024 TalenXpo</h1>
+</footer>
+
+<script src="/AProject.js"></script>
+<script src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="vbattalshn"
+        data-description="Support me on Buy me a coffee!" data-color="#5F7FFF" data-position="Right">
+</script>
+</body>
+
+</html>

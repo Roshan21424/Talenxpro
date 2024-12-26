@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Application</title>
+    <style>
+        body {
+          font-family: 'Poppins', sans-serif;
+          background-color: #0a0a0a;
+          color: #ffffff;
+          margin: 0;
+          padding: 0;
+        }
+
+        .container {
+          width: 50%;
+          margin: 50px auto;
+          background-color: #1b1b1b;
+          padding: 30px;
+          border-radius: 15px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+          border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h2 {
+          text-align: center;
+          margin-bottom: 20px;
+          color: white;
+        }
+
+        label {
+          font-weight: bold;
+        }
+
+        .input-field {
+          width: 100%;
+          padding: 12px;
+          margin: 10px 0;
+          border: 1px solid #444;
+          border-radius: 8px;
+          background-color: #1B1B1B;
+          color: #ffffff;
+          outline: none;
+        }
+
+        .input-field:focus {
+          border-color: #08aeea;
+        }
+
+        .submit-button {
+          width: 100%;
+          padding: 15px;
+          background: linear-gradient(to right, #ff8c00, #ff0080);
+          color: #1B1B1B;
+          font-size: 18px;
+          font-weight: bold;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+          background: linear-gradient(to right, #ff8c00, #ff0080);
+        }
+
+        #domain-selection-message {
+          background-image: linear-gradient(to right, #ff8c00, #ff0080);
+          color: black;
+          font-size: 18px;
+          padding: 10px;
+          border-radius: 8px;
+          font-weight: bold;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+
+        select {
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          background: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23ffffff' d='M2 0L0 2h4zM2 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right 10px center;
+          background-color: #1B1B1B;
+          background-size: 8px 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Internship Application</h2>
+
+    <!-- Display selected domain and subdomain -->
+    <p id="domain-selection-message"></p>
+
+    <form id="application-form">
+        <div>
+            <label for="name">Full Name</label>
+            <input class="input-field" type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input class="input-field" type="email" id="email" name="email" required>
+        </div>
+
+        <!-- Domain Selector -->
+        <div>
+            <label for="domain">Domain</label>
+            <select id="domain" class="input-field" name="domain" onchange="updateSubdomains()">
+                <option value="">Choose a Domain</option>
+                <option value="Artificial Intelligence">Artificial Intelligence</option>
+                <option value="Full Stack Development">Full Stack Development</option>
+                <option value="Cloud">Cloud</option>
+            </select>
+        </div>
+
+        <!-- Subdomain Selector -->
+        <div>
+            <label for="subdomain">Subdomain</label>
+            <select id="subdomain" class="input-field" name="subdomain" disabled>
+                <option value="">Select a Subdomain</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="message">Why do you want to join this domain?</label>
+            <textarea class="input-field" id="message" name="message" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-button">Submit Application</button>
+    </form>
+</div>
+
+<script>
+    const form = document.getElementById('application-form');
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault(); // Prevent default form submission
+
+      // Gather form data
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        domain: document.getElementById('domain').value,
+        subdomain: document.getElementById('subdomain').value,
+        message: document.getElementById('message').value
+      };
+
+      // Send form data as JSON
+      try {
+        const response = await fetch('/app/apply', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+
+        if (response.ok) {
+          alert('Application submitted successfully!');
+        } else {
+          alert('Failed to submit application. Please try again.');
+        }
+      } catch (error) {
+        alert('An error occurred: ' + error.message);
+      }
+    });
+
+    // Function to update subdomains based on the selected domain
+    function updateSubdomains() {
+      const domain = document.getElementById('domain').value;
+      const subdomainSelect = document.getElementById('subdomain');
+
+      // Clear previous subdomains
+      subdomainSelect.innerHTML = '<option value="">Select a Subdomain</option>';
+
+      // Enable the subdomain select
+      subdomainSelect.disabled = false;
+
+      // Define subdomains based on selected domain
+      const subdomains = {
+        'Artificial Intelligence': ['Machine Learning', 'Deep Learning'],
+        'Full Stack Development': ['MERN Stack', 'Spring Stack', 'Django Stack'],
+        'Cloud': ['Aws', 'Azure', 'Google Cloud Platform']
+      };
+
+      // Add subdomain options
+      if (domain) {
+        subdomains[domain].forEach(subdomain => {
+          const option = document.createElement('option');
+          option.value = subdomain;
+          option.textContent = subdomain;
+          subdomainSelect.appendChild(option);
+        });
+      }
+    }
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Application - Domains</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f0f0f0;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+        .container {
+          width: 80%;
+          max-width: 1200px;
+          padding: 20px;
+        }
+        .domain-card {
+          background-color: white;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          margin: 20px 0;
+          padding: 20px;
+          text-align: center;
+          cursor: pointer;
+          transition: transform 0.3s;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+        }
+        .domain-card:hover {
+          transform: scale(1.05);
+        }
+        .domain-card h3 {
+          margin-bottom: 10px;
+        }
+        .domain-card p {
+          font-size: 1.2em;
+          margin-bottom: 15px;
+        }
+        .subdomain-list {
+          display: none;
+          margin-top: 10px;
+        }
+        .subdomain-list ul {
+          list-style-type: none;
+          padding: 0;
+        }
+        .subdomain-list ul li {
+          cursor: pointer;
+          padding: 8px;
+          background-color: #f8f8f8;
+          margin: 5px 0;
+          border-radius: 5px;
+        }
+        .subdomain-list ul li:hover {
+          background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- AI Domain Card -->
+    <div class="domain-card" onclick="toggleSubdomains('AI')">
+        <h3>AI (Artificial Intelligence)</h3>
+        <p>Explore the fascinating world of AI, machine learning, and neural networks.</p>
+        <div class="subdomain-list" id="subdomains-AI">
+            <ul>
+                <li onclick="goToApplicationPage('AI', 'Machine Learning')">Machine Learning</li>
+                <li onclick="goToApplicationPage('AI', 'Deep Learning')">Deep Learning</li>
+                <li onclick="goToApplicationPage('AI', 'Natural Language Processing')">Natural Language Processing</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Web Development Domain Card -->
+    <div class="domain-card" onclick="toggleSubdomains('Web Development')">
+        <h3>Web Development</h3>
+        <p>Learn about building websites and applications from frontend to backend.</p>
+        <div class="subdomain-list" id="subdomains-Web Development">
+            <ul>
+                <li onclick="goToApplicationPage('Web Development', 'Frontend')">Frontend</li>
+                <li onclick="goToApplicationPage('Web Development', 'Backend')">Backend</li>
+                <li onclick="goToApplicationPage('Web Development', 'Full Stack')">Full Stack</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Cybersecurity Domain Card -->
+    <div class="domain-card" onclick="toggleSubdomains('Cybersecurity')">
+        <h3>Cybersecurity</h3>
+        <p>Focus on network security, ethical hacking, and protecting data.</p>
+        <div class="subdomain-list" id="subdomains-Cybersecurity">
+            <ul>
+                <li onclick="goToApplicationPage('Cybersecurity', 'Network Security')">Network Security</li>
+                <li onclick="goToApplicationPage('Cybersecurity', 'Penetration Testing')">Penetration Testing</li>
+                <li onclick="goToApplicationPage('Cybersecurity', 'Forensics')">Forensics</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Function to toggle subdomains visibility
+    function toggleSubdomains(domain) {
+      const subdomainsDiv = document.getElementById('subdomains-' + domain);
+      subdomainsDiv.style.display = (subdomainsDiv.style.display === 'block') ? 'none' : 'block';
+    }
+
+    // Function to redirect to the application page with domain and subdomain as URL parameters
+    function goToApplicationPage(domain, subdomain) {
+      const url = `application.html?domain=${encodeURIComponent(domain)}&subdomain=${encodeURIComponent(subdomain)}`;
+      window.location.href = url;
+    }
+</script>
+
+</body>
+</html>
